@@ -147,7 +147,7 @@ class Proxy {
         });
         const listenOptions = {
             port: 0,
-            host: "0.0.0.0",
+            host: "::",
         };
         if (this.httpsPort && !options.hosts) {
             listenOptions.port = this.httpsPort;
@@ -361,7 +361,7 @@ class Proxy {
         function makeConnection(port) {
             const conn = net_1.default.connect({
                 port,
-                host: "0.0.0.0",
+                host: "::",
                 allowHalfOpen: true,
             }, () => {
                 const connectKey = `${conn.localPort}:${conn.remotePort}`;
